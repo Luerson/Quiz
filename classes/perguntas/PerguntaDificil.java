@@ -4,8 +4,8 @@ public class PerguntaDificil extends PerguntaGeral{
     final private int potuacaoAcerto;
     final private int pontuacaoErro;
 
-    public PerguntaDificil (String texto, String[] alternativas, int alternativaCorreta) {
-        super(texto, alternativas, alternativaCorreta);
+    public PerguntaDificil (String texto, String[] alternativas, int alternativaCorreta, int ID) {
+        super(texto, alternativas, alternativaCorreta, ID);
         this.pontuacaoErro = 30;
         this.potuacaoAcerto = 100;
     }

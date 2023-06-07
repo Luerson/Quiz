@@ -3,6 +3,7 @@ package classes.perguntas;
 import java.util.*;
 
 public class BaseDeDados {
+    public int size = 1;
     private List<PerguntaGeral> bancoDeDados = new ArrayList<>() {
         @Override
         public int size() {
@@ -127,7 +128,8 @@ public class BaseDeDados {
         bancoDeDados.add(new PerguntaFacil(
                 "Texto",
                 new String[]{"A", "B"},
-                3
+                3,
+                1
         ));
     }
 }
