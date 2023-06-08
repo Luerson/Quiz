@@ -1,17 +1,31 @@
 package classes.perguntas;
 
 public class PerguntaMedia extends PerguntaGeral{
-    final private int potuacaoAcerto;
-    final private int pontuacaoErro;
+    private int pontuacaoAcerto;
+    private int pontuacaoErro;
 
-    public PerguntaMedia (String texto, String[] alternativas, int alternativaCorreta, int ID) {
-        super(texto, alternativas, alternativaCorreta, ID);
+    public PerguntaMedia() {
+        super();
+        this.pontuacaoErro = 0;
+        this.pontuacaoAcerto = 0;
+    }
+
+    public PerguntaMedia (String texto, String[] alternativas, int alternativaCorreta) {
+        super(texto, alternativas, alternativaCorreta);
         this.pontuacaoErro = 20;
-        this.potuacaoAcerto = 60;
+        this.pontuacaoAcerto = 60;
+    }
+
+    public void setPontuacaoAcerto(int pontuacaoAcerto) {
+        this.pontuacaoAcerto = pontuacaoAcerto;
+    }
+
+    public void setPontuacaoErro(int pontuacaoErro) {
+        this.pontuacaoErro = pontuacaoErro;
     }
 
     public int getPotuacaoAcerto() {
-        return potuacaoAcerto;
+        return pontuacaoAcerto;
     }
 
     public int getPontuacaoErro() {

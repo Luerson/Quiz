@@ -1,13 +1,11 @@
 package classes;
 
 public class Usuario {
-    final private int ID;
-    final private String nome;
+    private String nome;
     private int pontuacao;
 
-    public Usuario (String nome, int ID, int pontuacao) {
+    public Usuario (String nome, int pontuacao) {
         this.nome = nome;
-        this.ID = ID;
         this.pontuacao = pontuacao;
     }
 
@@ -17,10 +15,6 @@ public class Usuario {
 
     public String getNome() {
         return nome;
-    }
-
-    public int getID() {
-        return ID;
     }
 
     public int getPontuacao() {

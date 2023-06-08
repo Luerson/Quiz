@@ -3,133 +3,101 @@ package classes.perguntas;
 import java.util.*;
 
 public class BaseDeDados {
-    public int size = 1;
-    private List<PerguntaGeral> bancoDeDados = new ArrayList<>() {
-        @Override
-        public int size() {
-            return 0;
-        }
+    public int faceisSize = 5;
+    public int mediasSize = 5;
+    public int dificeisSize = 5;
+    private List<PerguntaFacil> perguntasFaceis;
+    private List<PerguntaMedia> perguntasMedias;
+    private List<PerguntaDificil> perguntasDificeis;
 
-        @Override
-        public boolean isEmpty() {
-            return false;
-        }
+    public BaseDeDados() {
+        this.perguntasFaceis = new ArrayList<>();
+        this.perguntasMedias = new ArrayList<>();
+        this.perguntasDificeis = new ArrayList<>();
 
-        @Override
-        public boolean contains(Object o) {
-            return false;
-        }
-
-        @Override
-        public Iterator<PerguntaGeral> iterator() {
-            return null;
-        }
-
-        @Override
-        public Object[] toArray() {
-            return new Object[0];
-        }
-
-        @Override
-        public <T> T[] toArray(T[] a) {
-            return null;
-        }
-
-        @Override
-        public boolean add(PerguntaGeral perguntaGeral) {
-            return false;
-        }
-
-        @Override
-        public boolean remove(Object o) {
-            return false;
-        }
-
-        @Override
-        public boolean containsAll(Collection<?> c) {
-            return false;
-        }
-
-        @Override
-        public boolean addAll(Collection<? extends PerguntaGeral> c) {
-            return false;
-        }
-
-        @Override
-        public boolean addAll(int index, Collection<? extends PerguntaGeral> c) {
-            return false;
-        }
-
-        @Override
-        public boolean removeAll(Collection<?> c) {
-            return false;
-        }
-
-        @Override
-        public boolean retainAll(Collection<?> c) {
-            return false;
-        }
-
-        @Override
-        public void clear() {
-
-        }
-
-        @Override
-        public PerguntaGeral get(int index) {
-            return null;
-        }
-
-        @Override
-        public PerguntaGeral set(int index, PerguntaGeral element) {
-            return null;
-        }
-
-        @Override
-        public void add(int index, PerguntaGeral element) {
-
-        }
-
-        @Override
-        public PerguntaGeral remove(int index) {
-            return null;
-        }
-
-        @Override
-        public int indexOf(Object o) {
-            return 0;
-        }
-
-        @Override
-        public int lastIndexOf(Object o) {
-            return 0;
-        }
-
-        @Override
-        public ListIterator<PerguntaGeral> listIterator() {
-            return null;
-        }
-
-        @Override
-        public ListIterator<PerguntaGeral> listIterator(int index) {
-            return null;
-        }
-
-        @Override
-        public List<PerguntaGeral> subList(int fromIndex, int toIndex) {
-            return null;
-        }
-    };
+        gerarBancoDeDados();
+    }
 
     // Percebi que a gente precisa de um local para adicionar as perguntas, então pensei em criar esse
     // banco de dados que vai conter elas, no final a gente só seleciona quais a gente quer. Foi só uma ideia
     // de momento, a gente pode mudar sem problema
     public void gerarBancoDeDados() {
-        bancoDeDados.add(new PerguntaFacil(
-                "Texto",
-                new String[]{"A", "B"},
-                3,
-                1
-        ));
+        perguntasFaceis.add(
+                new PerguntaFacil
+                        (
+                        "PerguntaMedia",
+                        new String[]{"A", "B"},
+                        3
+                        )
+        );
+
+        perguntasMedias.add(
+                new PerguntaMedia
+                        (
+                        "PerguntaDificil",
+                        new String[]{"A", "B", "C", "D", "E"},
+                        2
+                        )
+        );
+
+        perguntasDificeis.add(
+                new PerguntaDificil
+                        (
+                        "PerguntaDificil",
+                        new String[]{"A", "B", "C", "D", "E"},
+                        4
+                        )
+        );
+    }
+
+    public void preencheQuestao(PerguntaFacil pergunta, int index) {
+        PerguntaFacil perguntaSelecionada = perguntasFaceis.get(index);
+
+        pergunta.setTexto(perguntaSelecionada.getTexto());
+        pergunta.setAlternativas(perguntaSelecionada.getAlternativas());
+        pergunta.setAlternativaCorreta(perguntaSelecionada.getAlternativaCorreta());
+        pergunta.setPontuacaoAcerto(perguntaSelecionada.getPotuacaoAcerto());
+        pergunta.setPontuacaoErro(perguntaSelecionada.getPontuacaoErro());
+
+        perguntasDificeis.remove(index);
+        faceisSize--;
+    };
+
+    public void preencheQuestao(PerguntaMedia pergunta, int index) {
+        PerguntaMedia perguntaSelecionada = perguntasMedias.get(index);
+
+        pergunta.setTexto(perguntaSelecionada.getTexto());
+        pergunta.setAlternativas(perguntaSelecionada.getAlternativas());
+        pergunta.setAlternativaCorreta(perguntaSelecionada.getAlternativaCorreta());
+        pergunta.setPontuacaoAcerto(perguntaSelecionada.getPotuacaoAcerto());
+        pergunta.setPontuacaoErro(perguntaSelecionada.getPontuacaoErro());
+
+        perguntasDificeis.remove(index);
+        mediasSize--;
+    };
+
+    public void preencheQuestao(PerguntaDificil pergunta, int index) {
+        PerguntaDificil perguntaSelecionada = perguntasDificeis.get(index);
+
+        pergunta.setTexto(perguntaSelecionada.getTexto());
+        pergunta.setAlternativas(perguntaSelecionada.getAlternativas());
+        pergunta.setAlternativaCorreta(perguntaSelecionada.getAlternativaCorreta());
+        pergunta.setPontuacaoAcerto(perguntaSelecionada.getPotuacaoAcerto());
+        pergunta.setPontuacaoErro(perguntaSelecionada.getPontuacaoErro());
+
+        perguntasDificeis.remove(index);
+        dificeisSize--;
+    };
+
+    public int getFaceisSize() {
+        return faceisSize;
+    }
+
+    public int getMediasSize() {
+        return mediasSize;
+    }
+
+    public int getDificeisSize() {
+        return faceisSize;
     }
 }
