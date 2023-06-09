@@ -1,6 +1,6 @@
 package classes.perguntas;
 
-abstract class PerguntaGeral {
+public abstract class PerguntaGeral {
     private String texto;
     private String[] alternativas;
     private int alternativaCorreta;

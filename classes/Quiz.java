@@ -43,4 +43,16 @@ public class Quiz {
         this.usuarios[1] = usuario1;
         this.usuarios[2] = usuario2;
     }
+
+    //retorna o índice do usuário vencedor
+    //retorna -1 caso haja empate
+    public int vencedor() {
+        if (usuarios[0].getPontuacao() > usuarios[1].getPontuacao())
+            return 0;
+
+        if (usuarios[1].getPontuacao() > usuarios[0].getPontuacao())
+            return 1;
+
+        return -1;
+    }
 }

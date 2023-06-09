@@ -1,4 +1,5 @@
 package classes;
+import classes.perguntas.*;
 
 public class Usuario {
     private String nome;
@@ -7,6 +8,33 @@ public class Usuario {
     public Usuario (String nome, int pontuacao) {
         this.nome = nome;
         this.pontuacao = pontuacao;
+    }
+
+    public void pontuar(PerguntaFacil pergunta, int resposta) {
+        if (resposta == pergunta.getAlternativaCorreta()) {
+            this.pontuacao += pergunta.getPotuacaoAcerto();
+            return;
+        }
+
+        this.pontuacao -= pergunta.getPontuacaoErro();
+    }
+
+    public void pontuar(PerguntaMedia pergunta, int resposta) {
+        if (resposta == pergunta.getAlternativaCorreta()) {
+            this.pontuacao += pergunta.getPotuacaoAcerto();
+            return;
+        }
+
+        this.pontuacao -= pergunta.getPontuacaoErro();
+    }
+
+    public void pontuar(PerguntaDificil pergunta, int resposta) {
+        if (resposta == pergunta.getAlternativaCorreta()) {
+            this.pontuacao += pergunta.getPotuacaoAcerto();
+            return;
+        }
+
+        this.pontuacao -= pergunta.getPontuacaoErro();
     }
 
     public void setPontuacao(int pontuacao) {
