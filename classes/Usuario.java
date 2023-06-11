@@ -5,6 +5,11 @@ public class Usuario {
     private String nome;
     private int pontuacao;
 
+    public Usuario () {
+        this.nome = "";
+        this.pontuacao = 0;
+    }
+
     public Usuario (String nome, int pontuacao) {
         this.nome = nome;
         this.pontuacao = pontuacao;
@@ -39,6 +44,10 @@ public class Usuario {
 
     public void setPontuacao(int pontuacao) {
         this.pontuacao = pontuacao;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getNome() {
