@@ -21,20 +21,24 @@ public class Quiz {
         this.usuarios = new Usuario[2];
 
         for (int i = 0; i < perguntasFaceis.length; i++) {
+            this.perguntasFaceis[i] = new PerguntaFacil();
             Random random = new Random();
             int index = random.nextInt(bancoDeDados.getFaceisSize());
             bancoDeDados.preencheQuestao(this.perguntasFaceis[i], index);
         }
 
         for (int i = 0; i < perguntasMedias.length; i++) {
+            this.perguntasMedias[i] = new PerguntaMedia();
             Random random = new Random();
-            int index = random.nextInt(bancoDeDados.getFaceisSize());
+            int index = random.nextInt(bancoDeDados.getMediasSize());
             bancoDeDados.preencheQuestao(this.perguntasMedias[i], index);
         }
 
         for (int i = 0; i < perguntasDificeis.length; i++) {
+            this.perguntasDificeis[i] = new PerguntaDificil();
             Random random = new Random();
-            int index = random.nextInt(bancoDeDados.getFaceisSize());
+            int index = random.nextInt(bancoDeDados.getDificeisSize());
+
             bancoDeDados.preencheQuestao(this.perguntasDificeis[i], index);
         }
     }

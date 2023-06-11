@@ -3,8 +3,8 @@ package classes.perguntas;
 import java.util.*;
 
 public class BaseDeDados {
-    public int faceisSize = 5;
-    public int mediasSize = 5;
+    public int faceisSize = 10;
+    public int mediasSize = 10;
     public int dificeisSize = 5;
     private List<PerguntaFacil> perguntasFaceis;
     private List<PerguntaMedia> perguntasMedias;
@@ -232,7 +232,7 @@ public class BaseDeDados {
         pergunta.setPontuacaoAcerto(perguntaSelecionada.getPotuacaoAcerto());
         pergunta.setPontuacaoErro(perguntaSelecionada.getPontuacaoErro());
 
-        perguntasDificeis.remove(index);
+        perguntasFaceis.remove(index);
         faceisSize--;
     };
 
@@ -245,7 +245,7 @@ public class BaseDeDados {
         pergunta.setPontuacaoAcerto(perguntaSelecionada.getPotuacaoAcerto());
         pergunta.setPontuacaoErro(perguntaSelecionada.getPontuacaoErro());
 
-        perguntasDificeis.remove(index);
+        perguntasMedias.remove(index);
         mediasSize--;
     };
 
@@ -271,6 +271,6 @@ public class BaseDeDados {
     }
 
     public int getDificeisSize() {
-        return faceisSize;
+        return dificeisSize;
     }
 }
