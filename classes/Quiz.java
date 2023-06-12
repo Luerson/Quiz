@@ -8,9 +8,9 @@ import java.util.Random;
 
 public class Quiz {
     private BaseDeDados bancoDeDados = new BaseDeDados();
-    private PerguntaFacil[] perguntasFaceis;
-    private PerguntaMedia[] perguntasMedias;
-    private PerguntaDificil[] perguntasDificeis;
+    public PerguntaFacil[] perguntasFaceis;
+    public PerguntaMedia[] perguntasMedias;
+    public PerguntaDificil[] perguntasDificeis;
     private Usuario[] usuarios;
 
     public Quiz() {
