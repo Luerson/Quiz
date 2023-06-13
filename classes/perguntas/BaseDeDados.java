@@ -3,9 +3,9 @@ package classes.perguntas;
 import java.util.*;
 
 public class BaseDeDados {
-    public int faceisSize = 10;
-    public int mediasSize = 10;
-    public int dificeisSize = 5;
+    private int faceisSize = 10;
+    private int mediasSize = 10;
+    private int dificeisSize = 5;
     private List<PerguntaFacil> perguntasFaceis;
     private List<PerguntaMedia> perguntasMedias;
     private List<PerguntaDificil> perguntasDificeis;
@@ -229,8 +229,6 @@ public class BaseDeDados {
         pergunta.setTexto(perguntaSelecionada.getTexto());
         pergunta.setAlternativas(perguntaSelecionada.getAlternativas());
         pergunta.setAlternativaCorreta(perguntaSelecionada.getAlternativaCorreta());
-        pergunta.setPontuacaoAcerto(perguntaSelecionada.getPotuacaoAcerto());
-        pergunta.setPontuacaoErro(perguntaSelecionada.getPontuacaoErro());
 
         perguntasFaceis.remove(index);
         faceisSize--;
@@ -242,8 +240,6 @@ public class BaseDeDados {
         pergunta.setTexto(perguntaSelecionada.getTexto());
         pergunta.setAlternativas(perguntaSelecionada.getAlternativas());
         pergunta.setAlternativaCorreta(perguntaSelecionada.getAlternativaCorreta());
-        pergunta.setPontuacaoAcerto(perguntaSelecionada.getPotuacaoAcerto());
-        pergunta.setPontuacaoErro(perguntaSelecionada.getPontuacaoErro());
 
         perguntasMedias.remove(index);
         mediasSize--;
@@ -255,8 +251,6 @@ public class BaseDeDados {
         pergunta.setTexto(perguntaSelecionada.getTexto());
         pergunta.setAlternativas(perguntaSelecionada.getAlternativas());
         pergunta.setAlternativaCorreta(perguntaSelecionada.getAlternativaCorreta());
-        pergunta.setPontuacaoAcerto(perguntaSelecionada.getPotuacaoAcerto());
-        pergunta.setPontuacaoErro(perguntaSelecionada.getPontuacaoErro());
 
         perguntasDificeis.remove(index);
         dificeisSize--;

@@ -7,7 +7,7 @@ import classes.perguntas.PerguntaMedia;
 import java.util.Random;
 
 public class Quiz {
-    private BaseDeDados bancoDeDados = new BaseDeDados();
+    private BaseDeDados bancoDeDados;
     public PerguntaFacil[] perguntasFaceis;
     public PerguntaMedia[] perguntasMedias;
     public PerguntaDificil[] perguntasDificeis;
