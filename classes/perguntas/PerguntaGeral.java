@@ -1,45 +1,18 @@
 package classes.perguntas;
 
-public abstract class PerguntaGeral {
-    private String texto;
-    private String[] alternativas;
-    private int alternativaCorreta;
+public interface PerguntaGeral {
 
-    public PerguntaGeral() {
-        this.texto = "";
-        this.alternativas = new String[5];
-        this.alternativaCorreta = 0;
-    }
+    public String getTexto();
 
-    public PerguntaGeral(String texto, String[] alternativas, int alternativaCorreta) {
-        this.texto = texto;
-        this.alternativas = alternativas;
-        this.alternativaCorreta = alternativaCorreta;
-    }
+    public String[] getAlternativas();
 
-    public String getTexto() {
-        return texto;
-    }
+    public int getAlternativaCorreta();
 
-    public String[] getAlternativas() {
-        return alternativas;
-    }
+    public void setAlternativaCorreta(int alternativaCorreta);
 
-    public int getAlternativaCorreta() {
-        return alternativaCorreta;
-    }
+    public void setAlternativas(String[] alternativas);
 
-    public void setAlternativaCorreta(int alternativaCorreta) {
-        this.alternativaCorreta = alternativaCorreta;
-    }
-
-    public void setAlternativas(String[] alternativas) {
-        this.alternativas = alternativas;
-    }
-
-    public void setTexto(String texto) {
-        this.texto = texto;
-    }
+    public void setTexto(String texto);
 
     public abstract int getPotuacaoAcerto();
 

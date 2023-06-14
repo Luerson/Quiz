@@ -11,7 +11,7 @@ public class Quiz {
     public PerguntaFacil[] perguntasFaceis;
     public PerguntaMedia[] perguntasMedias;
     public PerguntaDificil[] perguntasDificeis;
-    private Usuario[] usuarios;
+    public Usuario[] usuarios;
 
     public Quiz() {
         this.bancoDeDados = new BaseDeDados();
@@ -44,8 +44,8 @@ public class Quiz {
     }
 
     public void setUsuarios(Usuario usuario1, Usuario usuario2) {
-        this.usuarios[1] = usuario1;
-        this.usuarios[2] = usuario2;
+        this.usuarios[0] = usuario1;
+        this.usuarios[1] = usuario2;
     }
 
     //retorna o índice do usuário vencedor

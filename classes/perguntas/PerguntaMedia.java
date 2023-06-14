@@ -1,13 +1,44 @@
 package classes.perguntas;
 
-public class PerguntaMedia extends PerguntaGeral{
+public class PerguntaMedia implements PerguntaGeral{
+    private String texto;
+    private String[] alternativas;
+    private int alternativaCorreta;
 
     public PerguntaMedia() {
-        super();
+        this.texto = "";
+        this.alternativas = new String[5];
+        this.alternativaCorreta = 0;
     }
 
     public PerguntaMedia (String texto, String[] alternativas, int alternativaCorreta) {
-        super(texto, alternativas, alternativaCorreta);
+        this.texto = texto;
+        this.alternativas = alternativas;
+        this.alternativaCorreta = alternativaCorreta;
+    }
+
+    public String getTexto() {
+        return texto;
+    }
+
+    public String[] getAlternativas() {
+        return alternativas;
+    }
+
+    public int getAlternativaCorreta() {
+        return alternativaCorreta;
+    }
+
+    public void setAlternativaCorreta(int alternativaCorreta) {
+        this.alternativaCorreta = alternativaCorreta;
+    }
+
+    public void setAlternativas(String[] alternativas) {
+        this.alternativas = alternativas;
+    }
+
+    public void setTexto(String texto) {
+        this.texto = texto;
     }
 
     public int getPotuacaoAcerto() {
