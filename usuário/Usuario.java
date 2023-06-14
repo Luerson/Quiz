@@ -1,5 +1,6 @@
-package classes;
-import classes.perguntas.*;
+package usuário;
+
+import perguntas.*;
 
 public class Usuario {
     private String nome;

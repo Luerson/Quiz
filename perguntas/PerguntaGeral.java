@@ -1,17 +1,17 @@
-package classes.perguntas;
+package perguntas;
 
-public class PerguntaFacil implements PerguntaGeral{
+public class PerguntaGeral {
     private String texto;
     private String[] alternativas;
     private int alternativaCorreta;
 
-    public PerguntaFacil() {
+    public PerguntaGeral() {
         this.texto = "";
         this.alternativas = new String[5];
         this.alternativaCorreta = 0;
     }
 
-    public PerguntaFacil (String texto, String[] alternativas, int alternativaCorreta) {
+    public PerguntaGeral (String texto, String[] alternativas, int alternativaCorreta) {
         this.texto = texto;
         this.alternativas = alternativas;
         this.alternativaCorreta = alternativaCorreta;
@@ -41,11 +41,9 @@ public class PerguntaFacil implements PerguntaGeral{
         this.texto = texto;
     }
 
-    public int getPotuacaoAcerto() {
-        return 40;
-    }
-
-    public int getPontuacaoErro() {
-        return 10;
+    public void escreveAlternativas() {
+        for (int i = 0; i < alternativas.length; i++) {
+            System.out.println(alternativas[i]);
+        }
     }
 }

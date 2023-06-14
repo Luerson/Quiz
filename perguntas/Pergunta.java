@@ -1,6 +1,6 @@
-package classes.perguntas;
+package perguntas;
 
-public interface PerguntaGeral {
+public interface Pergunta {
 
     public String getTexto();
 
@@ -17,4 +17,6 @@ public interface PerguntaGeral {
     public abstract int getPotuacaoAcerto();
 
     public abstract int getPontuacaoErro();
+
+    public void escreveAlternativas();
 }

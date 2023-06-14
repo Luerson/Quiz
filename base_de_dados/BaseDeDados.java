@@ -1,4 +1,8 @@
-package classes.perguntas;
+package base_de_dados;
+
+import perguntas.PerguntaDificil;
+import perguntas.PerguntaFacil;
+import perguntas.PerguntaMedia;
 
 import java.util.*;
 
