@@ -1,6 +1,6 @@
 package perguntas;
 
-public class PerguntaDificil extends PerguntaGeral implements Pergunta{
+public class PerguntaDificil extends PerguntaGeral{
 
     public PerguntaDificil() {
         super();

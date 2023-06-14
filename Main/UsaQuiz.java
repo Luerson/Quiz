@@ -10,33 +10,36 @@ public class UsaQuiz {
         Character jogar_novamente = 'a';
         int i = 0;
 
-        do {
-            if(i == 0)
-                cadastraUsuario(sc, quiz);
-            else
-                quiz.selecionaQuestoes();
-            Jogo(sc, quiz);
-            Resultados(quiz, sc);
+        try {
+            do {
+                if(i == 0)
+                    cadastraUsuario(sc, quiz);
+                else
+                    quiz.selecionaQuestoes();
+                Jogo(sc, quiz);
+                Resultados(quiz, sc);
 
-            i++;
+                i++;
 
-            quiz.usuarios[0].setPontuacao(0);
-            quiz.usuarios[1].setPontuacao(0);
+                quiz.usuarios[0].setPontuacao(0);
+                quiz.usuarios[1].setPontuacao(0);
 
-            if(i == 2)
-                System.out.println("Vocês já jogaram todas as rodadas possíveis!");
-            else {
-                System.out.print("Vocês desejam jogar novamente?\nDigite 's' para sim e 'n' para não\n--> ");
-                jogar_novamente = sc.next().charAt(0);
-                sc.nextLine();
-            }
+                if(i == 2)
+                    System.out.println("Vocês já jogaram todas as rodadas possíveis!");
+                else {
+                    System.out.print("Vocês desejam jogar novamente?\nDigite 's' para sim e 'n' para não\n--> ");
+                    jogar_novamente = sc.next().charAt(0);
+                    sc.nextLine();
+                }
 
-        } while(i != 2 && jogar_novamente!='n');
+            } while(i != 2 && jogar_novamente!='n');
 
-        System.out.println("Saindo do jogo...");
+            System.out.println("Saindo do jogo...");
 
-        sc.close();
-
+            sc.close();
+        } catch (InputMismatchException e) {
+            System.out.println("Entrada não condiz com requisitado " + e.getMessage());
+        }
     }
 
     public static void cadastraUsuario(Scanner sc, Quiz quiz) {

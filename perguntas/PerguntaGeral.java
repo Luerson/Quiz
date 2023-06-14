@@ -1,6 +1,6 @@
 package perguntas;
 
-public class PerguntaGeral {
+public abstract class PerguntaGeral {
     private String texto;
     private String[] alternativas;
     private int alternativaCorreta;
@@ -46,4 +46,8 @@ public class PerguntaGeral {
             System.out.println(alternativas[i]);
         }
     }
+
+    public abstract int getPotuacaoAcerto();
+
+    public abstract int getPontuacaoErro();
 }
