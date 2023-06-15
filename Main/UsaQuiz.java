@@ -11,6 +11,7 @@ public class UsaQuiz {
         int i = 0;
 
         try {
+
             do {
                 if(i == 0)
                     cadastraUsuario(sc, quiz);
@@ -30,11 +31,13 @@ public class UsaQuiz {
                     System.out.print("Vocês desejam jogar novamente?\nDigite 's' para sim e 'n' para não\n--> ");
                     jogar_novamente = sc.next().charAt(0);
                     sc.nextLine();
+                    if(jogar_novamente!='n')
+                        clearScreen();
                 }
 
             } while(i != 2 && jogar_novamente!='n');
 
-            System.out.println("Saindo do jogo...");
+            System.out.println("\nSaindo do jogo...");
 
             sc.close();
         } catch (InputMismatchException e) {
@@ -49,6 +52,12 @@ public class UsaQuiz {
         quiz.usuarios[0].setNome(sc.nextLine());
         System.out.print("Digite o nome do(a) jogador(a) 2\n--> ");
         quiz.usuarios[1].setNome(sc.nextLine());
+        while(quiz.usuarios[0].getNome().equalsIgnoreCase(quiz.usuarios[1].getNome())) {
+            System.out.print("\nOs jogadores não podem ter o mesmo nome.\n\nDigite novamente o nome do jogador 1\n--> ");
+            quiz.usuarios[0].setNome(sc.nextLine());
+            System.out.print("Digite novamente o nome do jogador 2\n--> ");
+            quiz.usuarios[1].setNome(sc.nextLine());
+        }
 
         clearScreen();
 
@@ -58,7 +67,7 @@ public class UsaQuiz {
 
         int jogador_vez, i;
 
-        System.out.printf("O Quiz vai iniciar! Se preparem, %s e %s, vocês são competidores...\n\nDigitem Enter quando estiverem prontos para jogar.\n", quiz.usuarios[0].getNome(), quiz.usuarios[1].getNome());
+        System.out.printf("O Quiz vai iniciar! Se preparem, %s e %s, vocês são competidores...\n\nPressionem Enter quando estiverem prontos para jogar.\n", quiz.usuarios[0].getNome(), quiz.usuarios[1].getNome());
         sc.nextLine();
 
         System.out.println("Vamos começar com as perguntas fáceis!\n");
@@ -79,12 +88,16 @@ public class UsaQuiz {
 
             int resposta_int = ConverteAlternativa(resposta);
 
-            if(resposta_int == 5)
-                System.out.printf("Você digitou uma alternativa inválida, %s. Irá perder pontos!\n", quiz.usuarios[jogador_vez].getNome());
-
             quiz.usuarios[jogador_vez].pontuar(quiz.perguntasFaceis[i], resposta_int);
 
-            clearScreen();
+            if(resposta_int == 5) {
+                System.out.printf("\nVocê digitou uma alternativa inválida, %s. Irá perder pontos!\n\nPressione Enter para continuar o jogo.\n", quiz.usuarios[jogador_vez].getNome());
+                sc.nextLine();
+                clearScreen();
+            }
+            else
+                clearScreen();
+
         }
 
         System.out.println("Agora, vamos para as perguntas médias!\n");
@@ -105,12 +118,16 @@ public class UsaQuiz {
 
             int resposta_int = ConverteAlternativa(resposta);
 
-            if(resposta_int == 5)
-                System.out.printf("Você digitou uma alternativa inválida, %s. Irá perder pontos!\n", quiz.usuarios[jogador_vez].getNome());
-
             quiz.usuarios[jogador_vez].pontuar(quiz.perguntasMedias[i], resposta_int);
 
-            clearScreen();
+            if(resposta_int == 5) {
+                System.out.printf("\nVocê digitou uma alternativa inválida, %s. Irá perder pontos!\n\nPressione Enter para continuar o jogo.\n", quiz.usuarios[jogador_vez].getNome());
+                sc.nextLine();
+                clearScreen();
+            }
+            else
+                clearScreen();
+
         }
 
         System.out.println("Está quase acabando! Chegamos nas perguntas difíceis... Boa sorte!\n");
@@ -131,12 +148,16 @@ public class UsaQuiz {
 
             int resposta_int = ConverteAlternativa(resposta);
 
-            if(resposta_int == 5)
-                System.out.printf("Você digitou uma alternativa inválida, %s. Irá perder pontos!\n", quiz.usuarios[jogador_vez].getNome());
-
             quiz.usuarios[jogador_vez].pontuar(quiz.perguntasDificeis[i], resposta_int);
 
-            clearScreen();
+            if(resposta_int == 5) {
+                System.out.printf("\nVocê digitou uma alternativa inválida, %s. Irá perder pontos!\n\nPressione Enter para continuar o jogo.\n", quiz.usuarios[jogador_vez].getNome());
+                sc.nextLine();
+                clearScreen();
+            }
+            else
+                clearScreen();
+
         }
     }
 
@@ -153,20 +174,20 @@ public class UsaQuiz {
 
     public static void Resultados(Quiz quiz, Scanner sc) {
         System.out.println("Parabéns, vocês finalizaram o Quiz!\n");
-        System.out.println("Agora, vamos revelar os resultados.");
+        System.out.println("Agora, vamos revelar os resultados.\n");
 
         String espaco = "";
 
-        System.out.printf("Jogador%10sPontuação\n", espaco);
+        System.out.printf("Jogador%10sPontuação\n\n", espaco);
         for(int i = 0; i<=1; i++)
-            System.out.printf("%s%11s%d\n",quiz.usuarios[i].getNome(), espaco, quiz.usuarios[i].getPontuacao());
+            System.out.printf("%6s%15d\n",quiz.usuarios[i].getNome(), quiz.usuarios[i].getPontuacao());
 
-        System.out.println("\n");
+        System.out.println();
 
         if(quiz.vencedor() == -1)
             System.out.println("Foi um jogo muito acirrado e aconteceu um empate!\n");
         else
-            System.out.printf("O vencedor foi... %s! Parabéns!!\n\n", quiz.usuarios[quiz.vencedor()].getNome());
+            System.out.printf("O(a) vencedor(a) foi... %s! Parabéns!!\n\n", quiz.usuarios[quiz.vencedor()].getNome());
 
         System.out.println("Pressione Enter para sair dessa página.");
         sc.nextLine();

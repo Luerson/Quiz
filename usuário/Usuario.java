@@ -11,11 +11,6 @@ public class Usuario {
         this.pontuacao = 0;
     }
 
-    public Usuario (String nome, int pontuacao) {
-        this.nome = nome;
-        this.pontuacao = pontuacao;
-    }
-
     public void pontuar(PerguntaFacil pergunta, int resposta) {
         if (resposta == pergunta.getAlternativaCorreta()) {
             this.pontuacao += pergunta.getPotuacaoAcerto();

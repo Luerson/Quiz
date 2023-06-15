@@ -28,11 +28,6 @@ public class Quiz {
         selecionaQuestoes();
     }
 
-    public void setUsuarios(Usuario usuario1, Usuario usuario2) {
-        this.usuarios[0] = usuario1;
-        this.usuarios[1] = usuario2;
-    }
-
     //retorna o índice do usuário vencedor
     //retorna -1 caso haja empate
     public int vencedor() {

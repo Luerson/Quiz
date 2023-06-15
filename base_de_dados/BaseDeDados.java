@@ -172,9 +172,9 @@ public class BaseDeDados {
 
         perguntasMedias.add(
                 new PerguntaMedia(
-                        "Qual é a diferença entre uma classe abstrata e uma interface em Java?\n",
-                        new String[]{"a) Uma classe abstrata pode ter implementações de métodos, enquanto uma interface não pode.\n", "b) Uma classe abstrata pode ser instanciada, enquanto uma interface não pode.\n", "c) Uma classe abstrata pode ter construtores, enquanto uma interface não pode.\n", "d) Uma classe abstrata pode herdar de múltiplas classes, enquanto uma interface não pode.\n", "e) Uma classe abstrata pode ter variáveis de instância, enquanto uma interface não pode.\n"},
-                        0
+                        "Na programação orientada a objetos, qual é o objetivo principal da instanciação de uma classe?\n",
+                        new String[]{"a) Alocar memória para armazenar os dados da classe.\n", "b) Definir os métodos e comportamentos da classe.\n", "c) Criar uma nova cópia da classe para uso posterior.\n", "d) Criar um objeto específico (instância) da classe para utilização no programa.\n", "e) Estabelecer a relação de herança entre classes.\n"},
+                        3
                 )
         );
 
