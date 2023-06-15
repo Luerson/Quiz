@@ -69,6 +69,7 @@ public class UsaQuiz {
 
         System.out.printf("O Quiz vai iniciar! Se preparem, %s e %s, vocês são competidores...\n\nPressionem Enter quando estiverem prontos para jogar.\n", quiz.usuarios[0].getNome(), quiz.usuarios[1].getNome());
         sc.nextLine();
+        clearScreen();
 
         System.out.println("Vamos começar com as perguntas fáceis!\n");
 
@@ -178,9 +179,9 @@ public class UsaQuiz {
 
         String espaco = "";
 
-        System.out.printf("Jogador%10sPontuação\n\n", espaco);
+        System.out.printf("%2sJogador%10sPontuação\n\n", espaco,espaco);
         for(int i = 0; i<=1; i++)
-            System.out.printf("%6s%15d\n",quiz.usuarios[i].getNome(), quiz.usuarios[i].getPontuacao());
+            System.out.printf("%8s%15d\n",quiz.usuarios[i].getNome(), quiz.usuarios[i].getPontuacao());
 
         System.out.println();
 
