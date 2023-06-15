@@ -190,7 +190,7 @@ public class UsaQuiz {
         else
             System.out.printf("O(a) vencedor(a) foi... %s! Parabéns!!\n\n", quiz.usuarios[quiz.vencedor()].getNome());
 
-        System.out.println("Pressione Enter para sair dessa página.");
+        System.out.println("Pressione Enter para sair dessa página. ");
         sc.nextLine();
         clearScreen();
 
