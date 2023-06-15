@@ -61,7 +61,7 @@ public class BaseDeDados {
         perguntasFaceis.add(
                 new PerguntaFacil(
                         "O que é polimorfismo em programação orientada a objetos?\n",
-                        new String[]{"a) Capacidade de uma classe herdar de múltiplas classes.\n", "b) Capacidade de uma classe ser usada como um tipo genérico.\n", "c) Capacidade de uma classe ter vários construtores.\n", "d) Capacidade de uma classe ter vários métodos com o mesmo nome, mas comportamentos diferentes.\n"},
+                        new String[]{"a) Capacidade de uma classe herdar de múltiplas classes.\n", "b) Capacidade de uma classe ser usada como um tipo genérico.\n", "c) Capacidade de uma classe ter vários construtores.\n", "d) Capacidade de uma classe ter vários métodos com o mesmo nome, mas comportamentos diferentes.\n", "e) Capacidade de uma classe alterar seu comportamento em tempo de execução, adaptando-se a diferentes situações e contextos."},
                         3
                 )
         );
